@@ -1,10 +1,10 @@
-import { Link } from "react-router-dom";
-import PropTypes from "prop-types";
-import { FaStar, FaStarHalf, FaRegStar } from "react-icons/fa";
-import { useContext } from "react";
-import { ApplicationContext } from "./Layout";
-import { useUser } from "@clerk/clerk-react";
-import toast from "react-hot-toast";
+import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { FaStar, FaStarHalf, FaRegStar } from 'react-icons/fa';
+import { useContext } from 'react';
+import { ApplicationContext } from './Layout';
+import { useUser } from '@clerk/clerk-react';
+import toast from 'react-hot-toast';
 
 export default function ProductCart({ id, url, name, price, rating }) {
   const { isSignedIn } = useUser();

@@ -1,5 +1,5 @@
-import { createContext, useState, useCallback } from "react";
-import PropTypes from "prop-types";
+import { createContext, useState, useCallback } from 'react';
+import PropTypes from 'prop-types';
 
 export const ApplicationContext = createContext();
 

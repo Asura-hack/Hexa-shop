@@ -1,12 +1,12 @@
-import { Link } from "react-router-dom";
-import { useState, useContext } from "react";
+import { Link } from 'react-router-dom';
+import { useState, useContext } from 'react';
 import {
   useUser,
   SignInButton,
   SignUpButton,
   useClerk,
-} from "@clerk/clerk-react";
-import { ApplicationContext } from "./Layout";
+} from '@clerk/clerk-react';
+import { ApplicationContext } from './Layout';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -71,7 +71,7 @@ export default function Header() {
         className="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
       >
         <i
-          className={`fas ${isOpen ? "fa-times" : "fa-bars"} text-gray-700`}
+          className={`fas ${isOpen ? 'fa-times' : 'fa-bars'} text-gray-700`}
         ></i>
       </button>
 

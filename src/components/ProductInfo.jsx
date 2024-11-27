@@ -1,10 +1,10 @@
-import { useParams } from "react-router-dom";
-import { useRequest } from "ahooks";
-import { useState, useContext } from "react";
-import { ApplicationContext } from "./Layout";
-import { FaStar, FaStarHalf, FaRegStar, FaUser } from "react-icons/fa";
-import { useUser } from "@clerk/clerk-react";
-import toast from "react-hot-toast";
+import { useParams } from 'react-router-dom';
+import { useRequest } from 'ahooks';
+import { useState, useContext } from 'react';
+import { ApplicationContext } from './Layout';
+import { FaStar, FaStarHalf, FaRegStar, FaUser } from 'react-icons/fa';
+import { useUser } from '@clerk/clerk-react';
+import toast from 'react-hot-toast';
 
 export default function ProductInfo() {
   const { id } = useParams();
@@ -109,10 +109,10 @@ export default function ProductInfo() {
               <span className="font-medium">Stock: </span>
               <span
                 className={`${
-                  product?.stock > 0 ? "text-green-600" : "text-red-600"
+                  product?.stock > 0 ? 'text-green-600' : 'text-red-600'
                 }`}
               >
-                {product?.stock > 0 ? `${product.stock} units` : "Out of stock"}
+                {product?.stock > 0 ? `${product.stock} units` : 'Out of stock'}
               </span>
             </div>
           </div>
@@ -150,11 +150,11 @@ export default function ProductInfo() {
                 disabled={product?.stock === 0}
                 className={`w-full py-3 px-6 rounded-lg font-medium transition-colors ${
                   product?.stock === 0
-                    ? "bg-gray-400 cursor-not-allowed"
-                    : "bg-blue-600 hover:bg-blue-700 text-white"
+                    ? 'bg-gray-400 cursor-not-allowed'
+                    : 'bg-blue-600 hover:bg-blue-700 text-white'
                 }`}
               >
-                {product?.stock === 0 ? "Out of Stock" : "Add to Cart"}
+                {product?.stock === 0 ? 'Out of Stock' : 'Add to Cart'}
               </button>
             ) : (
               <div className="text-center text-gray-600">
@@ -175,7 +175,7 @@ export default function ProductInfo() {
                 <FaUser className="text-gray-400 mr-2" />
                 <span className="font-medium">{review.user.username}</span>
                 <div className="ml-4 flex">
-                  {renderRating(Math.random() * 2 + 3)}{" "}
+                  {renderRating(Math.random() * 2 + 3)}{' '}
                   {/* Random rating between 3-5 */}
                 </div>
               </div>

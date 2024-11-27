@@ -1,6 +1,6 @@
-import PropTypes from "prop-types";
-import { useContext } from "react";
-import { ApplicationContext } from "./Layout";
+import PropTypes from 'prop-types';
+import { useContext } from 'react';
+import { ApplicationContext } from './Layout';
 
 export default function Cart({ id, url, name, price, quantity, onRemove }) {
   const { updateBasketItem } = useContext(ApplicationContext);
@@ -37,8 +37,8 @@ export default function Cart({ id, url, name, price, quantity, onRemove }) {
               onClick={() => handleQuantityChange(-1)}
               className={`w-8 h-8 flex items-center justify-center rounded-full bg-white shadow transition-colors ${
                 quantity <= 1
-                  ? "opacity-50 cursor-not-allowed"
-                  : "hover:bg-gray-50"
+                  ? 'opacity-50 cursor-not-allowed'
+                  : 'hover:bg-gray-50'
               }`}
               disabled={quantity <= 1}
             >

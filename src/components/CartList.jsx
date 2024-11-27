@@ -1,14 +1,14 @@
-import { useRequest } from "ahooks";
-import Cart from "./Cart";
-import { useContext, useState } from "react"; // Removed useEffect as it was not used
-import { ApplicationContext } from "./Layout";
-import { useUser, useClerk } from "@clerk/clerk-react";
-import { SignInButton } from "@clerk/clerk-react";
-import PropTypes from "prop-types";
-import toast from "react-hot-toast";
+import { useRequest } from 'ahooks';
+import Cart from './Cart';
+import { useContext, useState } from 'react'; // Removed useEffect as it was not used
+import { ApplicationContext } from './Layout';
+import { useUser, useClerk } from '@clerk/clerk-react';
+import { SignInButton } from '@clerk/clerk-react';
+import PropTypes from 'prop-types';
+import toast from 'react-hot-toast';
 
 function Product({ id, quantity, onRemove }) {
-  const numericId = typeof id === "string" ? parseInt(id, 10) : id;
+  const numericId = typeof id === 'string' ? parseInt(id, 10) : id;
 
   const { data, loading } = useRequest(
     () =>
@@ -50,7 +50,7 @@ export default function CartList() {
 
   const handlePurchase = async () => {
     if (!basket?.length) {
-      toast.error("Your cart is empty!");
+      toast.error('Your cart is empty!');
       return;
     }
 
@@ -75,11 +75,11 @@ export default function CartList() {
       clearBasket();
 
       toast.success(
-        "Thank you for your purchase! Your order has been confirmed."
+        'Thank you for your purchase! Your order has been confirmed.'
       );
     } catch (error) {
-      console.error("Purchase failed:", error);
-      toast.error("Failed to process your purchase. Please try again.");
+      console.error('Purchase failed:', error);
+      toast.error('Failed to process your purchase. Please try again.');
     } finally {
       setIsPurchasing(false);
     }
@@ -162,8 +162,8 @@ export default function CartList() {
                 className={`w-full py-4 px-6 rounded-lg font-medium text-white 
                   ${
                     isPurchasing
-                      ? "bg-gray-400 cursor-not-allowed"
-                      : "bg-blue-600 hover:bg-blue-700"
+                      ? 'bg-gray-400 cursor-not-allowed'
+                      : 'bg-blue-600 hover:bg-blue-700'
                   } 
                   transition-colors duration-300`}
               >
@@ -173,7 +173,7 @@ export default function CartList() {
                     Processing...
                   </div>
                 ) : (
-                  "Complete Purchase"
+                  'Complete Purchase'
                 )}
               </button>
             </div>

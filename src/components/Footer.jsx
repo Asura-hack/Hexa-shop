@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
 export default function Footer() {
   return (
@@ -61,7 +61,7 @@ export default function Footer() {
               <p>
                 Copyright © 2022 HexaShop Co., Ltd. All Rights Reserved.
                 <br />
-                Design:{" "}
+                Design:{' '}
                 <a
                   href="https://templatemo.com"
                   target="_parent"

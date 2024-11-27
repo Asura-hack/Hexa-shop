@@ -1,12 +1,12 @@
-import ProductList from "./ProductList";
-import bgImage from "../data/bg.jpg";
-import { useRef } from "react";
+import ProductList from './ProductList';
+import bgImage from '../data/bg.jpg';
+import { useRef } from 'react';
 
 function HomePage() {
   const productListRef = useRef(null);
 
   const handleShopNowClick = () => {
-    productListRef.current.scrollIntoView({ behavior: "smooth" });
+    productListRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (

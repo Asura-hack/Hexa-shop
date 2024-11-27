@@ -1,9 +1,9 @@
-import ProductCart from "./ProductCart";
-import { useRequest } from "ahooks";
+import ProductCart from './ProductCart';
+import { useRequest } from 'ahooks';
 
 export default function ProductList() {
   const { data, loading } = useRequest(() =>
-    fetch("https://dummyjson.com/products?limit=20").then((res) => res.json())
+    fetch('https://dummyjson.com/products?limit=20').then((res) => res.json())
   );
 
   if (loading) {

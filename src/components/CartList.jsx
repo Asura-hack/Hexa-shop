@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 
 function Product({ id, quantity, onRemove }) {
   const numericId = typeof id === 'string' ? parseInt(id, 10) : id;
+  const { basket } = useContext(ApplicationContext);
 
   const { data, loading } = useRequest(
     () =>
@@ -23,11 +24,14 @@ function Product({ id, quantity, onRemove }) {
 
   if (loading || !data) return null;
 
+  const basketItem = basket.find((item) => item.id === numericId);
+  const price = basketItem?.price || data.price;
+
   return (
     <Cart
       id={numericId}
       name={data.title}
-      price={data.price}
+      price={price}
       url={data.images[0]}
       quantity={quantity}
       onRemove={onRemove}

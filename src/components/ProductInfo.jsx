@@ -28,7 +28,19 @@ export default function ProductInfo() {
   const calculateTotal = () => quantity * product?.price;
 
   const handleAddToCart = () => {
-    addToBasket({ id, name: product?.title, price: product?.price, quantity });
+    console.log('Adding to cart:', {
+      id: parseInt(id, 10), // Ensure id is numeric
+      quantity,
+      price: product?.price,
+      name: product?.title,
+    });
+
+    addToBasket({
+      id: parseInt(id, 10), // Ensure id is numeric
+      quantity,
+      price: product?.price,
+      name: product?.title,
+    });
     toast.success(`${product?.title} added to cart`);
   };
 

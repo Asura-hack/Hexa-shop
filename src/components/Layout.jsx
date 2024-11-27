@@ -11,10 +11,12 @@ export const ApplicationProvider = ({ children }) => {
       const existingItem = prev.find((i) => i.id === item.id);
       if (existingItem) {
         return prev.map((i) =>
-          i.id === item.id ? { ...i, quantity: i.quantity + item.quantity } : i
+          i.id === item.id
+            ? { ...i, quantity: i.quantity + item.quantity, price: item.price }
+            : i
         );
       }
-      return [...prev, item];
+      return [...prev, { ...item, price: item.price }];
     });
   }, []);
 
